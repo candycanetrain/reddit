@@ -1,0 +1,11 @@
+<h1>Create a Subreddit</h1>
+
+<form action="<%= subs_url %>" method="post">
+  <label>Title</label>
+  <input type="string" name="sub[title]" value="">
+  <br>
+  <label>Description</label>
+  <input type="text" name="sub[description]" value="">
+  <br>
+  <input type="submit" value="Create subreddit">
+</form>

@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 2, allow_nil: true, message: "must be at least 6 characters" }
   before_validation :ensure_session_token
+  has_many :subs
+  has_many :posts
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

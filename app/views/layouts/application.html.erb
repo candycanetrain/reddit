@@ -8,7 +8,13 @@
 </head>
 <body>
 
+<img src="/owl.jpg" alt="awesome">
 <%= yield %>
-
+<% if logged_in? %>
+<%= link_to "Sign out", session_url, method: :delete %>
+<% else %>
+<%= link_to "Sign in", new_session_url, method: :get %>
+<%= link_to "Sign up", new_user_url, method: :get %>
+<% end %>
 </body>
 </html>
